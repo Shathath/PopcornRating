@@ -13,3 +13,36 @@ homecontainer.append(listcontainer);
 //creating image card
 var imagecard = new Images();
 listcontainer.appendChild(imagecard);
+
+
+window.onload = () => {
+    
+   async function getData()
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        
+     var request =  await fetch('https://tv-v2.api-fetch.website/movies/1').then((request)=>{
+           console.log(request)
+            return new Promise((resolve,reject) =>{
+            setTimeout(function(){
+               // console.log(request.json())
+                resolve(request.json());
+            },1000)
+            
+        })
+     }
+            
+              
+     ).then((data)=>{data.forEach(movie =>{
+          var image = document.createElement('img');
+          image.src = movie.images['poster'];
+          document.body.appendChild(image);
+          console.log(movie.images['poster']);
+     })})   
+           
+                
+
+
+
+    }
+    getData();
+}
