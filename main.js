@@ -11,8 +11,7 @@ var listcontainer = new Listcontainer();
 homecontainer.append(listcontainer);
 
 //creating image card
-var imagecard = new Images();
-listcontainer.appendChild(imagecard);
+
 
 
 window.onload = () => {
@@ -33,10 +32,13 @@ window.onload = () => {
             
               
      ).then((data)=>{data.forEach(movie =>{
-          var image = document.createElement('img');
-          image.src = movie.images['poster'];
-          document.body.appendChild(image);
-          console.log(movie.images['poster']);
+            var imagecard = new Images();
+            
+            imagecard.src = movie.images['poster'];
+            //imagecard.textContent ="hello worls"
+            imagecard.title = movie;
+            listcontainer.appendChild(imagecard);
+            
      })})   
            
                 
@@ -46,3 +48,22 @@ window.onload = () => {
     }
     getData();
 }
+$(document).ready(function(){
+    $('home-container').hover(function(){
+        $(this).toggleClass('home');
+
+              $('img-card').hover(
+                function () {
+                    $(this).addClass("title_hover");
+                  },
+                  function () {
+                    $(this).removeClass("title_hover");
+                  }
+                  
+            
+        
+        
+        
+      );
+                })
+            });
