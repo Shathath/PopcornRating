@@ -12,7 +12,9 @@ export class Images extends HTMLElement{
     }
     set title(movie)
     {
-        this.innerHTML = `<span style='visibility:hidden;color:#fff'>${movie.title}</span>`
+        this.innerHTML = `
+        <a class='img' href="${movie.trailer}"></a>
+        <span style='visibility:hidden';color:#fff'>${movie.title}</span>`
     }
 }
 

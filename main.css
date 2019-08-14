@@ -34,12 +34,26 @@ html,body{
 }
 .title_hover span{
   
-  font-family: fantasy;
+  font-family: century gothic;
+  font-weight: bolder;
   visibility: visible !important;
   position: relative;
-  top: 260px;
-  font-size: 1.4em;
+  top: 140px;
+  font-size: 1em;
+  color: #fff;
+  word-break: break-all;
+  white-space: normal;
+  
   
   
 
+}
+a.img{
+  background-image: url('../css/pbutton3.svg') ;
+  width: 140px;
+  height: 100px;
+  display: table;
+  position: relative;
+  top: -12px;
+  left: -40px;
 }
